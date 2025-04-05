@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waste Classification System</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Waste Classification System</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <div class="container">
-        <h1>Waste Classification System</h1>
-        <p class="description">Upload an image of waste to get disposal and reuse suggestions.</p>
+  <div class="container">
+    <h1>reScrap</h1>
+    <p class="description">Upload or capture an image of waste to get disposal and reuse suggestions.</p>
 
-        <div class="upload-section">
-            <input type="file" id="wasteImage" accept="image/*" hidden>
-            <label for="wasteImage" class="upload-box">Click to Upload Image</label>
-            <p id="fileName"></p>
-        </div>
-
-        <div class="result" id="resultBox">
-            <h3>Waste Type:</h3>
-            <p id="wasteType">---</p>
-            <h3>Suggested Disposal Methods:</h3>
-            <p id="suggestions">---</p>
-        </div>
+    <div class="upload-section">
+      <input type="file" id="wasteImage" accept="image/*" hidden>
+      <label for="wasteImage" class="upload-box">📁 Upload Image</label>
+      <button class="upload-box" onclick="startCamera()">📷 Use Camera</button>
+      <button class="upload-box" onclick="captureImage()">🎯 Capture</button>
+      <p id="fileName"></p>
     </div>
 
-    <script src="script.js"></script>
+    <video id="video" autoplay playsinline style="display: none; width: 100%; margin-top: 10px; border-radius: 10px;"></video>
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <div class="result" id="resultBox">
+      <h3>Waste Type:</h3>
+      <p id="wasteType">---</p>
+      <h3>Suggested Disposal Methods:</h3>
+      <p id="suggestions">---</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

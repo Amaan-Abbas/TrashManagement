@@ -1,11 +1,17 @@
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #84fab0, #8fd3f4);
+    background-image: url(images/background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: auto;
+    overflow-y: auto;
+    scroll-behavior: smooth;
     margin: 0;
   }
   
@@ -53,7 +59,7 @@ body {
   
   .upload-box {
     display: inline-block;
-    font-weight: 500;
+    font-weight: 600;
     color: white;
     padding: 12px 20px;
     background: #4CAF50;
